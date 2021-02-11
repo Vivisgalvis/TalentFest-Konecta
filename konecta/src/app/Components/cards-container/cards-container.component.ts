@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { DataService } from 'src/app/Services/data.service';
 import { map } from 'rxjs/operators';
@@ -13,6 +13,7 @@ export class CardsContainerComponent implements OnInit {
 
   data$: Observable<any[]>
   constructor(private dataService: DataService) { }
+
 
   ngOnInit(): void {
     this.data$ = this.dataService.data$.pipe(
@@ -30,8 +31,5 @@ export class CardsContainerComponent implements OnInit {
       return res
       })
     )
-
   }
-
 }
-
