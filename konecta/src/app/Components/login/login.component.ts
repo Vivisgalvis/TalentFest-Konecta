@@ -80,7 +80,7 @@ export class LoginComponent implements OnInit {
   
   togglePass() {
     this.showPass = !this.showPass
+    
   }
-
 }
 

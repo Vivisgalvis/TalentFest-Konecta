@@ -1,11 +1,13 @@
-<div>
+
+<div class="container">
     <img [src]="logo" alt="logo Nik">
     <div class="phrase1">
-        <p>Estar <span>conectado</span> es mantenerse <span>informado</span></p>
+        <p>Estar <span class="bold">conectado</span> es mantenerse <span class="bold">informado</span></p>
     </div>
     <form class="form" (ngSubmit)="logIn()" [formGroup]="form" #formElement="ngForm">
         <div>
           <input class="input" type="text" formControlName="user" placeholder="Usuario">
+          <br>
           <small *ngIf="user.touched && user.errors as errors">Este campo es requerido</small>
         </div>
         <div>
@@ -13,7 +15,8 @@
           <div>
             <input class="input" [type]="showPass ? 'text' : 'password' " formControlName="password" placeholder="Contraseña">
             <br>
-            <i (click)="togglePass()">Mostrar/ocultar contrasena</i>
+            <i (click)="togglePass()" [class]="'far fa-eye'+ (showPass ? 'far fa-eye-slash' : '')"></i>
+
           </div>
           <small *ngIf="password.touched && password.errors as errors">Este campo es requerido</small>
         </div>

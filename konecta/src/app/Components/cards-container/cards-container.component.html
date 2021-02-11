@@ -1,4 +1,5 @@
 <div class="cardContainer">
-    <app-cards *ngFor="let element of (data$ | async)" [element]="element" (click)='show(element)'></app-cards>
+    <div id="contenedor"></div>
+    <app-cards *ngFor="let element of (data$ | async)" [element]="element"></app-cards>
 </div>
 

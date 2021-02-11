@@ -31,18 +31,18 @@ export class DataService {
         }  
       );  
   }
- 
-    // getDataId() {
-    //     return this.http.get(
-    //         'https://nik.grupokonecta.co:7070/api/articles/12058/unico',
-    //         {
-    //             headers: new HttpHeaders({
-    //                 'Content-Type': 'application/json,charset=utf-8',
-    //                 Authorization: this.dataToken
-    //             })
-    //         }
-    //     )
-    // }
+
+  getDataId(id) {
+    return this.http.get(
+      `https://nik.grupokonecta.co:7070/api/articles/${id}/unico`,
+        {
+          headers: new HttpHeaders({
+              'Content-Type': 'application/json,charset=utf-8',
+              Authorization: this.dataToken
+        })
+      }
+    )
+  }
 
     // getCategories() {
     //     return this.http.get(
