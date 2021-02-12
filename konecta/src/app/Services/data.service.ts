@@ -46,17 +46,17 @@ export class DataService {
     )
   }
 
-  // getCategories() {
-  //     return this.http.get(
-  //         'https://nik.grupokonecta.co:7070/api/pcrc/0/categorias',
-  //         {
-  //             headers: new HttpHeaders({
-  //                 'Content-Type': 'application/json,charset=utf-8',
-  //                 Authorization: this.dataToken
-  //             })
-  //         }
-  //     )
-  // }
+  getCategories() {
+      return this.http.get(
+          'https://nik.grupokonecta.co:7070/api/pcrc/0/categorias',
+          {
+              headers: new HttpHeaders({
+                  'Content-Type': 'application/json,charset=utf-8',
+                  Authorization: this.dataToken
+              })
+          }
+      )
+  }
 
   // getComents() {
   //     return this.http.get(
