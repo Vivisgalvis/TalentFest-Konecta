@@ -1,9 +1,8 @@
 
 <div class="card" (click)="render(element)" *ngIf="element.title"> 
     <h3 class="titulo">{{ element.title }}</h3>
-    <div id="imgDef" *ngIf="element.firstImage">
-    </div>
         <img [src]="element.firstImage" *ngIf="element.firstImage"> 
+        <img src="/assets/BancoKonecta.png" class="ImgDef"  *ngIf="!element.firstImage"> 
     <div class="content">{{ element.content | limitText: 150}}<a>Ver más</a></div>
     <p class="fooInfo">{{ element.tags }}</p>
 </div>

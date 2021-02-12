@@ -31,12 +31,7 @@ export class CardsComponent implements OnInit {
       console.log(article[i])
       if (article[i]["insert"].image) {
         article[i]["insert"]["image"] = "https://nik.grupokonecta.co:7070/" + article[i]["insert"].image
-      } else {
-        document.getElementById('imgDef').innerHTML=""
-        const img=document.createElement('img')
-        img.src='/assets/BancoKonecta.png'
-        document.getElementById('imgDef').appendChild(img)
-      }
+      } 
     }
 
     try{
