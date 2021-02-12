@@ -4,7 +4,7 @@
     </a>
 
     <div class="inputDiv">
-    <input (change)="setSearchTerm($event.target.value)" type="search" class="search-bar" placeholder="🔍 search">
+    <input (keyup)="setSearchTerm($event.target.value)" type="search" class="search-bar" placeholder="🔍 search">
    </div>  
     <div class="iconos">
     <button><i class="fas fa-bell"></i></button>

@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { DataService } from 'src/app/Services/data.service';
 import { map } from 'rxjs/operators';
+import Quill from 'quill';
 
 @Component({
   selector: 'app-cards-container',
@@ -31,5 +32,11 @@ export class CardsContainerComponent implements OnInit {
       return res
       })
     )
+  }
+
+  back(){
+    document.getElementById("arrow_back").style.display = 'none'
+    document.getElementById("container_cards").style.display = 'flex'
+    document.getElementById("contenedor").style.display = "none";
   }
 }

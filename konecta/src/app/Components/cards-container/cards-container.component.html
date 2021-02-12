@@ -1,4 +1,8 @@
-<div class="cardContainer">
+<span class="icon-arrow" id="arrow_back" (click)="back()"><i class="fas fa-arrow-left"></i></span>
+<div id="contenedor">
+</div>
+
+<div class="cardContainer" id="container_cards">
     <app-cards *ngFor="let element of (data$ | async)" [element]="element"></app-cards>
 </div>
 
