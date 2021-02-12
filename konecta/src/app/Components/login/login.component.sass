@@ -4,47 +4,91 @@
 
 .container
     width: 100%
-    height: 100%
+    height: 646px
     overflow: hidden
-    display: -webkit-box
     display: flex
-    -webkit-box-align: center
     align-items: center
-    -webkit-box-pack: center
     justify-content: center
-    -webkit-box-orient: vertical
-    -webkit-box-direction: normal
     flex-direction: column
-    background-image: linear-gradient(to right top, #39b4cd, #7ebedd, #aec9e4, #d1d6e6, #e7e7e7)
+    background: linear-gradient(to right top, #39b4cd9a, #7ebddd86, #aec9e481, #d1d6e685, #e7e7e78a) , url(/assets/bg2.jpg) 
+    background-size: 100%
+    background-attachment: fixed
+    background-repeat: no-repeat
+
+.formContainer
+    z-index: 1
+    display: flex
+    align-items: center
+    flex-direction: column
+    background-color: #ffffff96
+    padding: 2rem
+    border-radius: 25px   
 
 img
-    margin-top: 10%
-    height: 241px
+    margin-top: 2%
+    height: 180px
 
 .input
-    border: #e4a41e groove
-    background-color: #dfdede
+    border: black groove
+    background-color: #fdf7f7
     border-radius: 10px
     height: 30px
     width: 180px
 
 .phrase1
-    color: #65a299
+    color: black
     font-size: 18px
 
 .bold
     font-weight: bold
+    color: #65a299 
 
-.slide
-    margin-left: 30px
+input[type="range"] 
+    width: 100%
+    -webkit-appearance: none 
+    border: 0 
+    margin: 8px 0
+    border-radius: 5px
 
-.phrase2
-    font-weight: bold
-    margin-left: 14px   
+input[type="range"]::-webkit-slider-runnable-track 
+    background: #65a299 
+    height: 10px 
+    border-radius: 4px 
+    transition: 0.8s
+
+input[type="range"]:hover::-webkit-slider-runnable-track,
+input[type="range"]:focus::-webkit-slider-runnable-track 
+    background: #d49c24
+
+input[type="range"]::-webkit-slider-thumb 
+    -webkit-appearance: none
+    background: #d49c24 
+    width: 28px 
+    height: 28px 
+    border-radius: 50%
+    margin-top: -12px 
+    cursor: pointer
+    border: 1px solid #f7f7f78e 
+    transition: 0.8s
+
+input[type="range"]:hover::-webkit-slider-thumb,
+input[type="range"]:focus::-webkit-slider-thumb 
+    background: #65a299 
+
+
+.divInput
+    display: flex    
+    position: relative
 
 .far
     cursor: pointer
-    
+    position: absolute
+    margin-left: 162px
+    margin-top: 10px
+
+.phrase2
+    font-weight: bold
+    margin: 2px
 
 
 

@@ -1,5 +1,7 @@
 
-<div class="container">
+<div class="container">  
+
+  <div class="formContainer">
     <img [src]="logo" alt="logo Nik">
     <div class="phrase1">
         <p>Estar <span class="bold">conectado</span> es mantenerse <span class="bold">informado</span></p>
@@ -12,9 +14,9 @@
         </div>
         <div>
           <br>
-          <div>
+          <div class="divInput">
             <input class="input" [type]="showPass ? 'text' : 'password' " formControlName="password" placeholder="Contraseña">
-            <br>
+            
             <i (click)="togglePass()" [class]="'far fa-eye'+ (showPass ? 'far fa-eye-slash' : '')"></i>
 
           </div>
@@ -25,5 +27,8 @@
             <input class="slide" formControlName="range" type="range" min="0" max="100" value="0">
             <p class="phrase2">Desliza para ingresar</p>
           </div>
+        <div>
+        </div>
       </form>
+  </div>
 </div>
