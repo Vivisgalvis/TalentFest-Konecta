@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { DataService } from 'src/app/Services/data.service';
 
 @Component({
   selector: 'app-nav',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavComponent implements OnInit {
 
-  constructor() { }
+  data$: Observable<any[]>;
+
+  constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
+  }
+
+  getCategories() {
+    this.dataService.getCategories().subscribe(( res: any ) => { this.data$ = res })
   }
 
 }
