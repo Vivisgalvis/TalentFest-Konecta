@@ -1,18 +1,19 @@
+<!-- ESTA SECCION ES LA MAS GENERAL -->
 <section> 
     <!-- Este primer div incluye la primera parte resultados e iconos -->
-    <div> 
-        <i>Icono atras</i>
-        <h3>Resultados</h3>
-    </div>
+    <div class="firstContainer"> 
+        <i class="fas fa-chevron-left"></i>  
+        <h3>Resultados</h3>   
+  </div>
     <!-- Esta segunda parte tiene todo el contenido -->
     <div>
         <!-- componente izquierdo -->
         <div>
             <!-- Parte de arriba del componente izquierdo -->
             <div>
-                <i><span>{{elements.like }}</span> icono me gusta</i>
-                <i><span>{{elements.dislike}}</span> icono no me gusta</i>
-                <i>Preferidos</i>
+                <i class="far fa-thumbs-up"><span>{{elements.like }}</span></i>
+                <i class="far fa-thumbs-down"><span>{{elements.dislike}}</span></i>
+                <i class="far fa-star"></i>
             </div>
         </div>
         <!-- Partede abajo del componente izquierdo -->
@@ -27,15 +28,15 @@
                 <nav>
                     <ul>
                         <li>
-                            <i>Icono del indice</i>
+                            <i class="fas fa-indent"></i>
                             Indice
                         </li>
                         <li>
-                            <i>Icono de tags</i>
+                            <i class="fas fa-tags"></i>
                             Tags
                         </li>
                         <li>
-                            <i>Icono del adjuntos</i>
+                            <i class="fas fa-paperclip"></i>
                             Adjuntos
                         </li>
                     </ul>
@@ -48,10 +49,11 @@
         </div>
         <div>
             <div>
-                <p><span>Icono de carita feliz</span> Comentarios</p>
+                <i class="far fa-laugh"></i> <span>Comentarios</span>
             </div>
         </div>
     </div>
 </section>
 <div #container style="display: none;">
 </div>
+
