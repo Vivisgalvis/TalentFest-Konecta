@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({ 
   providedIn: 'root'
@@ -33,7 +33,7 @@ export class DataService {
   }
 
   getDataId(id) {
-    return this.http.get(
+    return this.http.get<any>(
       `https://nik.grupokonecta.co:7070/api/articles/${id}/unico`,
         {
           headers: new HttpHeaders({

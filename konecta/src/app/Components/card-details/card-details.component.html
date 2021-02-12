@@ -1,2 +1,59 @@
-<div #container>
+<!-- MAJO BORRA LOS COMENTARIOS, SON PARA TI -->
+<!-- ESTA SECCION ES LA MAS GENERAL -->
+<section> 
+    <!-- Este primer div incluye la primera parte resultados e iconos -->
+    <div> 
+        <i>Icono atras</i>
+        <h3>Resultados</h3>
+    </div>
+    <!-- Esta segunda parte tiene todo el contenido -->
+    <div>
+        <!-- componente izquierdo -->
+        <div>
+            <!-- Parte de arriba del componente izquierdo -->
+            <div>
+                <i><span>{{elements.like }}</span> icono me gusta</i>
+                <i><span>{{elements.dislike}}</span> icono no me gusta</i>
+                <i>Preferidos</i>
+            </div>
+        </div>
+        <!-- Partede abajo del componente izquierdo -->
+        <div *ngFor="let element of elements.content || []; let i = index" >
+        </div>
+    </div>
+    <!-- Componenete derecho -->
+    <div>
+        <!-- Componente derecho parte de arriba -->
+        <div>
+            <div>
+                <nav>
+                    <ul>
+                        <li>
+                            <i>Icono del indice</i>
+                            Indice
+                        </li>
+                        <li>
+                            <i>Icono de tags</i>
+                            Tags
+                        </li>
+                        <li>
+                            <i>Icono del adjuntos</i>
+                            Adjuntos
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <!-- contenido de cada uno de los nav de arriba -->
+            <div>
+
+            </div>
+        </div>
+        <div>
+            <div>
+                <p><span>Icono de carita feliz</span> Comentarios</p>
+            </div>
+        </div>
+    </div>
+</section>
+<div #container style="display: none;">
 </div>
