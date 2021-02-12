@@ -20,29 +20,39 @@
                 <div>
                     <nav>
                         <ul>
-                            <li>
+                            <li class="indice" (click)="content = 'indice'">
                                 <i class="fas fa-indent"></i>
                                 Indice
                             </li>
-                            <li>
+                            <li class="indice"  (click)="content = 'tags'">
                                 <i class="fas fa-tags"></i>
                                 Tags
                             </li>
-                            <li>
+                            <li class="indice"  (click)="content = 'adjunto'">
                                 <i class="fas fa-file-image"></i>
                                 Adjuntos
                             </li>
                         </ul>
                     </nav>
                 </div>
-                <div>
-
+                <div class="content">
+                    <div *ngIf="content === 'tags'">
+                        <ul>
+                            <li *ngFor="let tag of elements.tag">
+                                <i class="fas fa-tags"></i>
+                                {{ tag }}
+                            </li>
+                        </ul>
+                    </div>
+                    <div *ngIf="content === 'adjunto'"> 
+                        {{elements.image}}
+                    </div>
                 </div>
             </div>
             <div class="container-comment">
                 <p class="comment"><i class="far fa-smile"></i> Comentarios</p>
-                <textarea name="" id="" cols="30" rows="10"></textarea>
-                <button class="button" (click)="saveComment">Enviar</button>
+                <textarea  cols="30" rows="10" [value]="searchValue"></textarea>
+                <button class="button" (click)="saveComment()">Enviar</button>
             </div>
         </div>
     </div>

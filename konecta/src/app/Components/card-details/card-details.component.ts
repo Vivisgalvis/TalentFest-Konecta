@@ -4,6 +4,7 @@ import { map } from 'rxjs/operators';
 import { Article } from '../../Model/content.model';
 import { DataService } from '../../Services/data.service';
 import Quill from 'quill';
+import Swal from 'sweetalert2'
 
 
 @Component({
@@ -16,6 +17,8 @@ export class CardDetailsComponent implements OnInit {
   id: any
   data$
   elements: Article = {}
+  content: string = 'tags'
+  searchValue = null
   constructor(private dataService: DataService, private _route: ActivatedRoute) {
     this.id = this._route.snapshot.paramMap.get('id')
     this.showDetail(this.id)
@@ -24,9 +27,14 @@ export class CardDetailsComponent implements OnInit {
   ngOnInit(): void {
   }
   
-  saveComment(text: string) {
-    localStorage.setItem('comment', text)
-    
+  saveComment() {
+    this.searchValue = '';
+    Swal.fire({
+      icon: 'success',
+      title: 'Comentario registrado',
+      showConfirmButton: false,
+      timer: 1500
+    })
   }
 
   showDetail(id) {
