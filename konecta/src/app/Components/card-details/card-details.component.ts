@@ -1,10 +1,10 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { element } from 'protractor';
+import { map } from 'rxjs/operators';
+import { Article } from '../../Model/content.model';
+import { DataService } from '../../Services/data.service';
 import Quill from 'quill';
-import { Observable, pipe } from 'rxjs';
-import { elementAt, map } from 'rxjs/operators';
-import { DataService } from 'src/app/Services/data.service';
+
 
 @Component({
   selector: 'app-card-details',
@@ -15,7 +15,7 @@ export class CardDetailsComponent implements OnInit {
   @ViewChild('container') container: ElementRef;
   id: any
   data$
-
+  elements: Article = {}
   constructor(private dataService: DataService, private _route: ActivatedRoute) {
     this.id = this._route.snapshot.paramMap.get('id')
     this.showDetail(this.id)
@@ -31,16 +31,23 @@ export class CardDetailsComponent implements OnInit {
         const quill = new Quill(this.container.nativeElement, {
           theme: 'bubble'
         });
-        let arrData = element['obj'];
-        const fix_article = JSON.parse(arrData).ops;
-        for (let i = 0; i < fix_article.length; i++) {
-          if (fix_article[i]["insert"].image) {
-            fix_article[i]["insert"].image = "https://nik.grupokonecta.co:7070/" + fix_article[i]["insert"].image
+        console.log(element)
+        const article = JSON.parse(element['obj']).ops
+        this.elements = {
+          title: element.title,
+          tag: element.tags,
+          content: article,
+          like: element.likes,
+          dislike: element.dislikes
+        }
+        for (let i = 0; i < article.length; i++) {
+          if (article[i]["insert"].image) {
+            article[i]["image"] = "https://nik.grupokonecta.co:7070/" + article[i]["insert"].image
           }
         }
         try{
           quill.setContents([{ insert: '\n' }]);
-          quill.updateContents(fix_article);
+          quill.updateContents(article);
         }
         catch(err){
         }
