@@ -9,12 +9,11 @@ import { HeaderComponent } from './Components/header/header.component';
 import { NavComponent } from './Components/nav/nav.component';
 import { CardsContainerComponent } from './Components/cards-container/cards-container.component';
 import { CardsComponent } from './Components/cards/cards.component';
-import { from } from 'rxjs';
 import { LimitTextPipe } from './Pipes/limit-text.pipe';
 import { LoginComponent } from './Components/login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CardDetailsComponent } from './Components/card-details/card-details.component';
-
+import { HomeGuard } from './Guards/home/home.guard';
 
 @NgModule({
   declarations: [
@@ -32,9 +31,9 @@ import { CardDetailsComponent } from './Components/card-details/card-details.com
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [HomeGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -4,6 +4,7 @@ import { map } from 'rxjs/operators';
 import { Article } from '../../Model/content.model';
 import { DataService } from '../../Services/data.service';
 import Quill from 'quill';
+import Swal from 'sweetalert2'
 
 
 @Component({
@@ -16,6 +17,8 @@ export class CardDetailsComponent implements OnInit {
   id: any
   data$
   elements: Article = {}
+  content: string = 'tags'
+  searchValue = null
   constructor(private dataService: DataService, private _route: ActivatedRoute) {
     this.id = this._route.snapshot.paramMap.get('id')
     this.showDetail(this.id)
@@ -24,6 +27,16 @@ export class CardDetailsComponent implements OnInit {
   ngOnInit(): void {
   }
   
+  saveComment() {
+    this.searchValue = '';
+    Swal.fire({
+      icon: 'success',
+      title: 'Comentario registrado',
+      showConfirmButton: false,
+      timer: 1500
+    })
+  }
+
   showDetail(id) {
     this.data$ = this.dataService.getDataId(id)
     .pipe(
@@ -33,17 +46,17 @@ export class CardDetailsComponent implements OnInit {
         });
         console.log(element)
         const article = JSON.parse(element['obj']).ops
+        for (let i = 0; i < article.length; i++) {
+          if (article[i]["insert"].image) {
+            article[i]["insert"]["image"] = "https://nik.grupokonecta.co:7070/" + article[i]["insert"].image
+          }
+        }
         this.elements = {
           title: element.title,
           tag: element.tags,
           content: article,
           like: element.likes,
           dislike: element.dislikes
-        }
-        for (let i = 0; i < article.length; i++) {
-          if (article[i]["insert"].image) {
-            article[i]["image"] = "https://nik.grupokonecta.co:7070/" + article[i]["insert"].image
-          }
         }
         try{
           quill.setContents([{ insert: '\n' }]);

@@ -21,11 +21,9 @@ export class NavComponent implements OnInit {
     console.log(this.data$)
   }
 
-/*   showChannels(){
-    this.dataService.getDataTags().subscribe((res: any) => {this.data$ = res})
-    console.log(this.data$)
-  } */
- 
- 
+  getFavorites() {
+    this.dataService.getFavorites().subscribe((res: any) => { this.data$ = res})
+  }
+
 }
 
