@@ -1,59 +1,49 @@
-<!-- ESTA SECCION ES LA MAS GENERAL -->
-<section> 
-    <!-- Este primer div incluye la primera parte resultados e iconos -->
-    <div class="firstContainer"> 
-        <i class="fas fa-chevron-left"></i>  
-        <h3>Resultados</h3>   
-  </div>
-    <!-- Esta segunda parte tiene todo el contenido -->
-    <div>
-        <!-- componente izquierdo -->
-        <div>
-            <!-- Parte de arriba del componente izquierdo -->
-            <div>
-                <i class="far fa-thumbs-up"><span>{{elements.like }}</span></i>
-                <i class="far fa-thumbs-down"><span>{{elements.dislike}}</span></i>
-                <i class="far fa-star"></i>
+<section class="container"> 
+    <a routerLink="/home"> 
+        <i class="fas fa-arrow-left"></i>Resultados
+    </a>
+    <h1 class="title">{{elements.title}}</h1>
+    <div class="flex-container">
+        <div class="container-left">
+            <div class="container">
+                <div class="option">
+                    <i ><span>{{elements.like }}</span> <i class="far fa-thumbs-up"></i></i>
+                    <i ><span>{{elements.dislike}}</span> <i class="far fa-thumbs-down"></i></i>
+                    <i ><i class="far fa-star"></i></i>
+                </div>
+            </div>
+            <div #container id="container">
             </div>
         </div>
-        <!-- Partede abajo del componente izquierdo -->
-        <div *ngFor="let element of elements.content || []; let i = index" >
-        </div>
-    </div>
-    <!-- Componenete derecho -->
-    <div>
-        <!-- Componente derecho parte de arriba -->
-        <div>
+        <div class="container-right">
             <div>
-                <nav>
-                    <ul>
-                        <li>
-                            <i class="fas fa-indent"></i>
-                            Indice
-                        </li>
-                        <li>
-                            <i class="fas fa-tags"></i>
-                            Tags
-                        </li>
-                        <li>
-                            <i class="fas fa-paperclip"></i>
-                            Adjuntos
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-            <!-- contenido de cada uno de los nav de arriba -->
-            <div>
+                <div>
+                    <nav>
+                        <ul>
+                            <li>
+                                <i class="fas fa-indent"></i>
+                                Indice
+                            </li>
+                            <li>
+                                <i class="fas fa-tags"></i>
+                                Tags
+                            </li>
+                            <li>
+                                <i class="fas fa-file-image"></i>
+                                Adjuntos
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div>
 
+                </div>
             </div>
-        </div>
-        <div>
-            <div>
-                <i class="far fa-laugh"></i> <span>Comentarios</span>
+            <div class="container-comment">
+                <p class="comment"><i class="far fa-smile"></i> Comentarios</p>
+                <textarea name="" id="" cols="30" rows="10"></textarea>
+                <button class="button" (click)="saveComment">Enviar</button>
             </div>
         </div>
     </div>
 </section>
-<div #container style="display: none;">
-</div>
-

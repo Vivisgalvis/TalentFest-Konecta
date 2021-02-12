@@ -4,15 +4,18 @@ import { CardDetailsComponent } from './Components/card-details/card-details.com
 import { CardsContainerComponent } from './Components/cards-container/cards-container.component';
 import { LayoutComponent } from './Components/layout/layout.component';
 import { LoginComponent } from './Components/login/login.component';
+import { HomeGuard } from './Guards/home/home.guard';
 
 
 const routes: Routes = [
     {
       path: '',
+      canActivate: [HomeGuard],
       component: LoginComponent
     },
     {
       path: 'home',
+      canActivate: [HomeGuard],
       component: LayoutComponent,
       children: [
         {

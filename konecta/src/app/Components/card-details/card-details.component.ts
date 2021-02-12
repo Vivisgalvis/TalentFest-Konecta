@@ -24,6 +24,11 @@ export class CardDetailsComponent implements OnInit {
   ngOnInit(): void {
   }
   
+  saveComment(text: string) {
+    localStorage.setItem('comment', text)
+    
+  }
+
   showDetail(id) {
     this.data$ = this.dataService.getDataId(id)
     .pipe(
@@ -33,17 +38,17 @@ export class CardDetailsComponent implements OnInit {
         });
         console.log(element)
         const article = JSON.parse(element['obj']).ops
+        for (let i = 0; i < article.length; i++) {
+          if (article[i]["insert"].image) {
+            article[i]["insert"]["image"] = "https://nik.grupokonecta.co:7070/" + article[i]["insert"].image
+          }
+        }
         this.elements = {
           title: element.title,
           tag: element.tags,
           content: article,
           like: element.likes,
           dislike: element.dislikes
-        }
-        for (let i = 0; i < article.length; i++) {
-          if (article[i]["insert"].image) {
-            article[i]["image"] = "https://nik.grupokonecta.co:7070/" + article[i]["insert"].image
-          }
         }
         try{
           quill.setContents([{ insert: '\n' }]);

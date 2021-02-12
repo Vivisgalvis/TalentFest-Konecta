@@ -1,8 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { Observable } from 'rxjs';
 import { DataService } from 'src/app/Services/data.service';
 import { map } from 'rxjs/operators';
-import Quill from 'quill';
 
 @Component({
   selector: 'app-cards-container',
@@ -10,6 +9,8 @@ import Quill from 'quill';
   styleUrls: ['./cards-container.component.sass']
 })
 export class CardsContainerComponent implements OnInit {
+  showCard = false
+
   @Input() element: any;
 
   data$: Observable<any[]>
@@ -38,6 +39,7 @@ export class CardsContainerComponent implements OnInit {
     document.getElementById("arrow_back").style.display = 'none'
     document.getElementById("container_cards").style.display = 'flex'
     document.getElementById("contenedor").style.display = "none";
+    this.showCard = false
   }
 
   getFavorites() {

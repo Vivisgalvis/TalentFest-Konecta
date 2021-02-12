@@ -1,10 +1,11 @@
-
-<div class="card" (click)="render(element)" *ngIf="element.title"> 
+<div  *ngIf="element.title" class="card" (click)="render(element)" [routerLink]="['article', element.id]" routerLinkActive="router-link-active">
     <h3 class="titulo">{{ element.title }}</h3>
         <img [src]="element.firstImage" *ngIf="element.firstImage"> 
         <img src="/assets/BancoKonecta.png" class="ImgDef"  *ngIf="!element.firstImage"> 
     <div class="content">{{ element.content | limitText: 150}}<a>Ver más</a></div>
-    <p class="fooInfo">{{ element.tags }}</p>
+    <ul class="fooInfo">
+        <li class="info" *ngFor="let tag of element.tags | slice:0:2">
+            <i class="fas fa-tags"></i>{{ tag }}
+        </li>
+    </ul>
 </div>
-
-<!-- [routerLink]="['article', element.id]" routerLinkActive="router-link-active" -->

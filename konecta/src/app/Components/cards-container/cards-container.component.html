@@ -1,8 +1,25 @@
-<span class="icon-arrow" id="arrow_back" (click)="back()"><i class="fas fa-arrow-left"></i></span>
-<div id="contenedor">
-</div>
-
 <div class="cardContainer" id="container_cards">
-    <app-cards *ngFor="let element of (data$ | async)" [element]="element"></app-cards>
+    <div style="display: flex;" *ngIf="showCard">
+        <div id="contenedor">
+        </div>
+        <div>
+            <span class="icon-arrow" id="arrow_back" (click)="back()"><i class="fas fa-arrow-left"></i></span>
+            <div class="flex-container">
+                <span>
+                    <i class="far fa-thumbs-up"></i>
+                </span>
+                <span>
+                    <i class="far fa-thumbs-down"></i>
+                </span>
+                <span>
+                    <i class="far fa-star"></i>
+                </span>
+            </div>
+            <div>
+                hoka
+            </div>
+        </div>
+    </div>
+    <app-cards *ngFor="let element of (data$ | async)" [element]="element" (click)="showCard = true"></app-cards>
 </div>
 
