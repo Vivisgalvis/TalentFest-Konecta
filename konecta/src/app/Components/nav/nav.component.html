@@ -5,11 +5,13 @@
     <ul>
         <li><a (click)="getCategories()"> <img class="iconos" src="/assets/campana.png" > <p>campaña</p> </a></li>
         <li><a> <img class="iconos" src="/assets/noticias.png" > <p> noticias </p></a></li>
-        <li><a> <img class="iconos" src="/assets/favoritos.png"> <p>favoritos</p> </a></li>
+        <li><a (click)="getFavorites()"> <img class="iconos" src="/assets/favoritos.png"> <p>favoritos</p> </a></li>
+        <li><a *ngFor="let name of data$">{{ name.name }}</a></li>
+
         </ul>
 
 </nav>
 
-<div>
-    <li><a *ngFor="let name of data$">{{ name }}</a></li>
-</div>
+<!-- <div>
+   
+</div> -->

@@ -39,4 +39,11 @@ export class CardsContainerComponent implements OnInit {
     document.getElementById("container_cards").style.display = 'flex'
     document.getElementById("contenedor").style.display = "none";
   }
+
+  getFavorites() {
+    this.dataService.getFavorites().subscribe((res: any) => { this.data$ = res})
+    console.log(this.data$)
+  }
+
+  
 }

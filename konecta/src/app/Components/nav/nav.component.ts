@@ -20,4 +20,8 @@ export class NavComponent implements OnInit {
     this.dataService.getCategories().subscribe(( res: any ) => { this.data$ = res })
   }
 
+  getFavorites() {
+    this.dataService.getFavorites().subscribe((res: any) => { this.data$ = res})
+  }
+
 }
