@@ -3,13 +3,13 @@
 <nav>
 
     <ul>
-        <li><a (click)="getCategories()"> <img class="iconos" src="/assets/campana.png" > <p>campaña</p> </a></li>
+        <li><a (click)="getCategories()"> <img class="iconos" src="/assets/campana.png" > <p>campaña</p> </a>
+            <div class="menu-item__sub"><a class="btn" *ngFor="let name of data$">{{ name.name }}</a></div>
+        </li>
         <li><a> <img class="iconos" src="/assets/noticias.png" > <p> noticias </p></a></li>
         <li><a> <img class="iconos" src="/assets/favoritos.png" > <p>favoritos</p> </a></li>
         </ul>
 
 </nav>
 
-<div>
-    <li><a *ngFor="let name of data$">{{ name.name }}</a></li>
-</div>
+

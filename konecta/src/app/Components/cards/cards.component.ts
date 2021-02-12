@@ -13,7 +13,7 @@ export class CardsComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-  console.log(this.element)
+  //console.log(this.element)
   }
    
   render(art){

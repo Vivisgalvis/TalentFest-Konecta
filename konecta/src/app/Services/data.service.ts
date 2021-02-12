@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -46,17 +46,19 @@ export class DataService {
     )
   }
 
-  // getCategories() {
-  //     return this.http.get(
-  //         'https://nik.grupokonecta.co:7070/api/pcrc/0/categorias',
-  //         {
-  //             headers: new HttpHeaders({
-  //                 'Content-Type': 'application/json,charset=utf-8',
-  //                 Authorization: this.dataToken
-  //             })
-  //         }
-  //     )
-  // }
+  getCategories(): Observable<any[]> {
+      return this.http.get<any[]>(
+          'https://nik.grupokonecta.co:7070/api/pcrc/0/categorias',
+          {
+              headers: new HttpHeaders({
+                  'Content-Type': 'application/json,charset=utf-8',
+                  Authorization: this.dataToken
+              })
+          }
+      )
+  }
+
+  
 
   // getComents() {
   //     return this.http.get(
