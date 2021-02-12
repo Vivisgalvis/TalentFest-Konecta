@@ -10,11 +10,13 @@ import Quill from 'quill';
 export class CardsComponent implements OnInit {
   @Input() element: any
 
-  constructor() { }
+  constructor() {
+   }
 
   ngOnInit(): void {
-  //console.log(this.element)
+  console.log(this.element) 
   }
+     
    
   render(art){
     document.getElementById("container_cards").style.display = "none";
@@ -29,7 +31,7 @@ export class CardsComponent implements OnInit {
       console.log(article[i])
       if (article[i]["insert"].image) {
         article[i]["insert"]["image"] = "https://nik.grupokonecta.co:7070/" + article[i]["insert"].image
-      }
+      } 
     }
 
     try{
@@ -41,4 +43,5 @@ export class CardsComponent implements OnInit {
     }
     console.log('artic', article)
   }
+
 }
